@@ -1,6 +1,128 @@
+
+
+.custom-dark-bg {
+    background-color: #121212;
+}
+
+.primary-color {
+    color: #006AFE;
+}
+
+.secondary-color {
+    color: #F9EA9D;
+}
+
+.light-yellow {
+    color: #F2EDD9;
+}
+
+.grey-color {
+    color: #1F1F1F;
+}
+
+.text-black {
+    color: #1C1D1F
+}
+
+.bg-light-yellow {
+    background-color: #EFEDE3;
+}
+
+/*.bg-theme-dark {*/
+/*    background-color: #000000;*/
+/*}*/
+
+
+.bg-theme-noise {
+    background-image: url(https://blacklisted.agency/wp-content/uploads/2025/03/noise-sm.png);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -2;
+    background-color: #000000;
+}
+
+.bg-theme-noise::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.bg-theme-blue {
+    background-color: #006AFE;
+}
+
+.bg-grey {
+    background-color: #292f34;
+}
+
+.bg-secondary-color {
+    background-color: #F9EA9D;
+}
+
+hr.custom-grey-border {
+    color: #D9D9D9;
+}
+
+.cursor-pointer,
+.grid-wrapper .portfolio-card,
+section#custom-cursor-img {
+    cursor: pointer;
+}
+
+hr {
+    opacity: 1;
+    color: #1c1e28;
+}
+
+.btn {
+    min-width: 240px;
+    padding: 12px 20px 16px;
+    max-height: 55px;
+}
+
+.custom-btn {
+    padding-top: 60px;
+    margin: 0px !important;
+}
+
+.border-end {
+    border-right: 2px solid rgba(0, 0, 0, 0.25) !important;
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+    border: none;
+}
+
+body,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html {
+    font-family: Arboria;
+}
+
+
 /*
 Theme Name: Blacklisted Theme
 Author: Blacklisted Agency
 Requires PHP: 7.4
 Version: 1.1
 */
+
+
