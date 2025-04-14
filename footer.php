@@ -106,6 +106,10 @@ $page_bg_class = 'bg-theme-dark';  ?>
                 <?php endwhile; endif; ?>
             </div>
 
+            <div>
+                this is for testing purpose
+            </div>
+
             <div class="container text-center my-3 py-3 py-md-5">
                 <span class="social-heading text-white mb-4 text-lowercase d-block">Engage and Follow</span>
                 <ul class="social-icons list-inline m-0 m-md-auto">
