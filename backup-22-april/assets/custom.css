@@ -1948,12 +1948,6 @@ span.experience-symbol {
     height: auto;
 }
 
-section.potfolio-commom-section {
-    position: relative;
-    z-index: 1;
-}
-
-
 section.banner-sec-parallax {
     min-height: 900px;
     background-attachment: fixed;
@@ -2675,39 +2669,7 @@ hr.custom-border-grey {
 }
 
 .portfolio-hero-section img {
-   filter: grayscale(1);
-    width: 100%;
-    height: auto;
-}
-
-.portfolio-hero-section{
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.portfolio-image-overlay-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    z-index: 1;
-    text-align: center;
-    width: 100%;
-    height: auto;
-}
-
-section.portfolio-hero-section:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: auto;
-    left: 0;
-    background: linear-gradient(180deg, #000000e8 32%, #fff0);
-    top: 0;
-    z-index: 1;
+    filter: grayscale(1);
 }
 
 
