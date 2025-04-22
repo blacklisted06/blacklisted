@@ -1,5 +1,5 @@
 <?php
-get_header('blog');
+get_header();
 $categories = wp_get_post_terms(get_the_ID(), 'category', array('fields' => 'ids'));
 // Function to estimate reading time
 function get_reading_time($content, $wpm = 200) {
@@ -11,29 +11,30 @@ function get_reading_time($content, $wpm = 200) {
 // Get post content and calculate reading time
 $reading_time = get_reading_time(get_the_content());
 ?>
+<div class="bg-theme-noise" aria-hidden="true"></div>
 <div class="blog-inside-wrapper">
     <!-- Hero SH -->
-    <section class="in-hero-sec bg-light-yellow pt-5 pb-3">
+    <section class="in-hero-sec bg-theme-dark pt-5 pb-3 pb-md-5">
         <div class="container">
             <div class="simplein-hero-sec position-relative">
                 <?php if (has_post_thumbnail()) {
                     $thumbnail_id = get_post_thumbnail_id(get_the_ID());
                     $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'full')[0];
-                    echo '<figure class="blog-features-img"><img src="' . esc_url($thumbnail_url) . '" class="img-fluid" alt="' . esc_attr(get_the_title()) . '"></figure>';
+                    echo '<figure class="blog-features-img m-0"><img src="' . esc_url($thumbnail_url) . '" class="img-fluid" alt="' . esc_attr(get_the_title()) . '"></figure>';
                 } ?>
                 <h1 class="article__title text-white m-0"><?php the_title(); ?></h1>
             </div>
         </div>
     </section>
 	<?php if( have_rows('content_stucture') ) { ?>
-    <section class="article_content bg-light-yellow">
+    <section class="article_content bg-theme-dark">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 text d-none d-sm-block">
                     <div class="blog-detail-sidebar pe-0 pe-md-5">
                     <div class="blog-read-time d-flex align-items-center gap-1 pb-3">
-                        <img src ="https://blacklisted.agency/wp-content/uploads/2025/02/SVG.svg" alt ="time">
-                         <p class="m-0"><?php echo $reading_time; ?>min read</p>
+                        <img src ="https://blacklisted.agency/wp-content/uploads/2025/04/clock-svg.svg" alt ="time-icon">
+                         <p class="text-white m-0"><?php echo $reading_time; ?>min read</p>
                         </div>
                     <ol class="blog-sidebar-list mt-3" id="blog-sidebar-list">
                         <?php
@@ -44,7 +45,7 @@ $reading_time = get_reading_time(get_the_content());
                             if (get_row_layout() == 'single_heading') {
                                 $heading = get_sub_field('heading');
                                 ?>
-                        <li class="commom-description"><a class="nav-link"
+                        <li class="commom-description text-white"><a class="nav-link"
                                 href="#<?php echo sanitize_title($heading); ?>"><?php echo esc_html($heading); ?></a>
                         </li>
                         <?php
@@ -64,7 +65,7 @@ $reading_time = get_reading_time(get_the_content());
                     $value = get_field( "title" );
                     if( !empty( $value ) ):
                         ?>
-                        <h3><?php echo esc_html($value); ?></h3>
+                        <h3 class ="text-white"><?php echo esc_html($value); ?></h3>
                     <?php endif;
                     $desci = get_field( "bio" );
                     if( !empty( $desci ) ):
@@ -86,7 +87,7 @@ $reading_time = get_reading_time(get_the_content());
                     </div>
                     <?php endif;  ?>
                     <div class="post-categories hero-common-section-spacing pt-0">
-                        <h4>Tags</h4>
+                        <h4 class="text-white">Tags</h4>
                         <div class="category-buttons mb-3">
                             <?php
                             $categories = get_the_category();
@@ -111,8 +112,8 @@ $reading_time = get_reading_time(get_the_content());
                         if(!empty($title_excerpt)){
                            ?>
                     <div class="blog-tldr mb-5">
-                         <h3 class="commom-description mb-3 fw-semibold"> <?php echo  wp_kses_post( $title_excerpt );?></h3>
-                         <p class="commom-description m-0"><?php the_field('excerpt')?></p>
+                         <h3 class="commom-description text-white mb-3 fw-semibold"> <?php echo  wp_kses_post( $title_excerpt );?></h3>
+                         <p class="commom-description text-white m-0"><?php the_field('excerpt')?></p>
                     </div>
                        <?php
                         }else{
@@ -120,9 +121,9 @@ $reading_time = get_reading_time(get_the_content());
                         }
                          ?>
 
-                    <div class="blog-main-content commom-description"> <?php the_content();?></div>
+                    <div class="blog-main-content commom-description text-white"> <?php the_content();?></div>
                     <ul class="in-this-article-list my-5 list-unstyled">
-                        <span class="commom-description in-this-article-heading mb-2">In This Article</span>
+                        <span class="commom-description text-white in-this-article-heading mb-2">In This Article</span>
                         <?php
                     // Loop through each flexible content layout and create dynamic list items for the sidebar
                     if (have_rows('content_stucture')): 
@@ -131,7 +132,7 @@ $reading_time = get_reading_time(get_the_content());
                             if (get_row_layout() == 'single_heading') {
                                 $heading = get_sub_field('heading');
                                 ?>
-                        <li class="commom-description py-2 text-decoration-underline"><a class="nav-link"
+                        <li class="commom-description text-white py-2 text-decoration-underline"><a class="nav-link"
                                 href="#<?php echo sanitize_title($heading); ?>"><?php echo esc_html($heading); ?></a>
                         </li>
                         <?php
@@ -150,7 +151,7 @@ $reading_time = get_reading_time(get_the_content());
 
                                     case 'single_heading':
                                         ?>
-                            <h2 class="single-heading hero-common-section-spacing pb-0">
+                            <h2 class="single-heading text-white hero-common-section-spacing pb-0">
                                 <?php the_sub_field('heading'); ?>
                             </h2>
                             <?php
@@ -158,9 +159,9 @@ $reading_time = get_reading_time(get_the_content());
 
                                     case 'single_description':
                                         ?>
-                            <p class="commom-description single-desc">
-                                <?php the_sub_field('description', false, false); ?>
-                            </p>
+                            <div class="commom-description text-white single-desc">
+                               <?php echo get_sub_field('description'); ?>
+                            </div>
                             <?php
                                         break;
 
@@ -247,7 +248,7 @@ $reading_time = get_reading_time(get_the_content());
                                         case 'dynamic_table': ?>
                             <div class="dynamic-table table-responsive">
                                 <?php if( have_rows('table_structure') ): ?>
-                                <table class="table bg-light-yellow">
+                                <table class="table bg-theme-dark">
                                     <?php while( have_rows('table_structure') ): the_row(); ?>
 
                                     <?php if (get_row_layout() == 'thead_layout') : ?>
@@ -288,7 +289,7 @@ $reading_time = get_reading_time(get_the_content());
                             <?php if( have_rows('items') ): ?>
                                 <ol>
                                 <?php while( have_rows('items') ): the_row(); ?>
-                                    <li class="commom-description">
+                                    <li class="commom-description text-white">
                                        <?php the_sub_field('text'); ?>
                                     </li>
                                     <?php endwhile; ?>
@@ -303,7 +304,7 @@ $reading_time = get_reading_time(get_the_content());
                             <?php if( have_rows('points') ): ?>
                                 <ul>
                                 <?php while( have_rows('points') ): the_row(); ?>
-                                    <li class="commom-description">
+                                    <li class="commom-description text-white">
                                         <span><?php the_sub_field('heading'); ?> </span><?php the_sub_field('items'); ?>
                                     </li>
                                     <?php endwhile; ?>
@@ -315,7 +316,7 @@ $reading_time = get_reading_time(get_the_content());
                                                 case 'single_line_text':
                                                     ?>
                             <div class="single-line-text">
-                                <p class="common-description"><?php the_sub_field('text'); ?></p>
+                                <p class="common-description text-white"><?php the_sub_field('text'); ?></p>
                             </div>
                             <?php
                                                     break;
@@ -324,6 +325,38 @@ $reading_time = get_reading_time(get_the_content());
                             <div class="sub-headings">
                                 <h4><?php the_sub_field('items'); ?></h4>
                             </div>
+                             <?php   break;
+                                     case 'faq':
+                                                        ?>
+                                                        <div class="col-lg-12 col-md-12 col-sm-12">
+					<div class="list row faq-sec seo-faq-section bg-theme-dark">
+						<div class="accordion" id="accordionExample">
+							<?php if( have_rows('faq_items') ): ?>
+							<?php 
+							$counter = 1; // Initialize counter
+							while( have_rows('faq_items') ): the_row();
+							?>
+							<div class="accordion-item rounded-0">
+								<h2 class="accordion-header" id="headingOne_<?php echo $counter; ?>">
+									<button class="accordion-button <?php echo ($counter == 1) ? '' : 'collapsed'; ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne_<?php echo $counter; ?>" aria-expanded="<?php echo ($counter == 1) ? 'true' : 'false'; ?>
+                             " aria-controls="collapseOne_<?php echo $counter; ?>">
+										<?php echo esc_html( get_sub_field('ques')); ?>
+										
+									</button>
+								</h2>
+								<div id="collapseOne_<?php echo $counter; ?>" class="accordion-collapse collapse <?php echo ($counter == 1) ? 'show' : ''; ?>
+																					 " aria-labelledby="headingOne_<?php echo $counter; ?>" data-bs-parent="#accordionExample">
+									<div class="accordion-body p-0 mb-5"><?php echo get_sub_field('ans'); ?> </div>
+								</div>
+							</div>
+							<?php 
+							$counter++; // Increment counter
+							endwhile; 
+							?>
+							<?php endif; ?>
+						</div>
+					</div>
+				</div> 
                             <?php
                                                         break;
                                     default:
@@ -344,7 +377,7 @@ $reading_time = get_reading_time(get_the_content());
         </div>
     </section>
 <?php } else { ?> 
-	<section class="content-sec common-section-spacing bg-light-yellow">
+	<section class="content-sec common-section-spacing bg-theme-dark">
         <div class="container">
             <div class="blog-block-main">
                 <div class="blog-data-info article-content">
@@ -355,27 +388,35 @@ $reading_time = get_reading_time(get_the_content());
     </section>	
 	<?php } ?>
 
-    <section class="common-section-spacing bg-light-yellow">
+    <section class="common-section-spacing bg-theme-dark">
       <div class="container">		 
 		  <div class="custom-divider">
-			  <img src="https://blacklisted.agency/wp-content/uploads/2025/02/divider-image.webp" class="img-fluid" alt="divider-image">
+			  <img src="<?=  site_url(); ?>/wp-content/uploads/2025/02/divider-image.webp" class="img-fluid" alt="divider-image">
 		  </div>
 		</div>
 	</section>
 
-	<section class="blog-detail-cta-section hero-common-section-spacing bg-light-yellow">
+	<section class="blog-detail-cta-section hero-common-section-spacing bg-theme-dark">
 	    <div class="container">
-	        <?php $image_bac = get_field('image_bg', 'option');
+	        <?php $image_bac = get_field('image_bg', 'options');
+	        $blog_button_link = get_field('blog_button_link', 'options');
                 if (!empty ($image_bac)){?>
 	        <div class="blog-cta-section p-5" style="background-image: url(<?php echo esc_url($image_bac['url']); ?>);">
 	            <div class="row gx-3 gy-3 d-flex align-items-center">
 	                <div class="col-lg-9 col-sm-6">
-	                    <span class="commom-description text-white text-uppercase d-block"> <?php the_field('sub_heading', 'option'); ?> </span>
-	                    <h4 class="blog-cta-heading text-white"><?php the_field('heading', 'option'); ?></h4>
+	                    <span class="commom-description text-white text-white text-uppercase d-block"> <?php the_field('sub_heading', 'options'); ?> </span>
+	                    <h4 class="blog-cta-heading text-white"><?php the_field('heading', 'options'); ?></h4>
 	                </div>
 	                <div class="col-lg-3 col-sm-6">
 						<div class="blog-cta-form blog-custom-btn">
-							 <?php echo do_shortcode('[fluentform id="6"]');?>
+							 <?php //echo do_shortcode('[fluentform id="6"]');?>
+							 <a class="custom-btn-animation button-link btn rounded-0 text-white" href="<?= $blog_button_link['url']; ?>">
+                                <span class="button-content-wrapper">
+                                    <span class="button-text"><?php the_field('blog_button_text', 'options'); ?>
+                                        <span class="btn-arrows"></span>
+                                    </span>
+                                </span>
+                             </a>
 						</div>	                   
 	                </div>
 	            </div>
@@ -384,13 +425,13 @@ $reading_time = get_reading_time(get_the_content());
 	    </div>
 	</section>
 
-    <section class="blog-articles realated-blogs-section common-section-spacing bg-light-yellow">
+    <section class="blog-articles realated-blogs-section common-section-spacing bg-theme-dark">
         <div class="container">
             <div class="section-header pb-5">
-                <h2 class="commom-heading"><?php echo esc_html(get_field('related_blogs_title', 'option')); ?></h2>
+                <h2 class="commom-heading text-white"><?php echo esc_html(get_field('related_blogs_title', 'option')); ?></h2>
                 <span
-                    class="common-subheading primary-color d-block mb-3"><?php echo esc_html(get_field('related_blogs_sub_title', 'option')); ?></span>
-                <p class="commom-description"><?php echo esc_html(get_field('related_blogs_desc', 'option')); ?></p>
+                    class="common-subheading secondary-color d-block mb-3"><?php echo esc_html(get_field('related_blogs_sub_title', 'option')); ?></span>
+                <p class="commom-description text-white"><?php echo esc_html(get_field('related_blogs_desc', 'option')); ?></p>
             </div>
             <div class="row gy-4 blog-listing">
                 <?php
@@ -469,4 +510,4 @@ $reading_time = get_reading_time(get_the_content());
     </section>
 </div>
 
-<?php get_footer('blog'); ?>
+<?php get_footer(); ?>

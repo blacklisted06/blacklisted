@@ -13,9 +13,9 @@ $client_video_image= get_field('client_video_image');
 <div class="bg-theme-noise" aria-hidden="true"></div>
 <div class="portfolio-inside-wrapper">
      <!--hero section-->
-    <section class="portfolio-hero-section hero-section-spacing bg-theme-dark"
-        style="background: url('<?= $banner['url']; ?>') no-repeat center top/cover; z-index: 1;
-    position: relative;">
+    <section class="portfolio-hero-section bg-theme-dark">
+        <img src="<?= $banner['url']; ?>" class="img-fluid" alt="<?= $banner['alt']; ?>">
+        <div class="portfolio-image-overlay-text">
         <div class="container">
             <div class="portfolio-banner-content text-center text-white py-5">
                 <div class="blog-block-main">
@@ -28,13 +28,13 @@ $client_video_image= get_field('client_video_image');
             <div class="row align-items-center pt-5 g-4">
                 <?php if(get_field('client_name')) { ?>
                 <div class="col-md-3">
-                    <h6 class="common-subheading secondary-color fst-normal info-title mb-1"><?= 'Client Name'; ?></h6>
-                    <p class="text-white mb-0"><?= get_field('client_name'); ?></p> 
+                    <h6 class="common-subheading text-start secondary-color fst-normal info-title mb-1"><?= 'Client Name'; ?></h6>
+                    <p class="commom-description text-start text-white mb-0"><?= get_field('client_name'); ?></p> 
                 </div>
                 <?php } if(get_field('brand')) { ?>
                 <div class="col-md-3">
-                    <h6 class="common-subheading secondary-color fst-normal info-title mb-1"><?= 'Brand'; ?></h6>
-                    <p class="text-white mb-0"><?= get_field('brand'); ?></p>
+                    <h6 class="common-subheading text-start secondary-color fst-normal info-title mb-1"><?= 'Brand'; ?></h6>
+                    <p class="commom-description text-start text-white mb-0"><?= get_field('brand'); ?></p>
                 </div><?php } if ($terms && !is_wp_error($terms)) {?>
                 <div class="col-md-6">
                     <div class="row mt-3">
@@ -42,13 +42,14 @@ $client_video_image= get_field('client_video_image');
                             <?php
                                     foreach ($terms as $term) {
                                         $term_link = get_term_link($term); // Get term URL
-                                        echo '<a href="' . esc_url($term_link) . '" class="tag">' . esc_html($term->name) . '</a><br>';
+                                        echo '<button class="tag">' . esc_html($term->name) . '</button><br>';
                                     }
                             ?>
                         </div> <?php } ?>
                     </div>
                 </div>
             </div> <?php } ?>
+        </div>
         </div>
     </section>
     
@@ -122,7 +123,7 @@ $client_video_image= get_field('client_video_image');
                 </div>
 
                 <div class="col-lg-12 col-12 ">
-                    <div class="portfolio-sidebar portfolio-brief">
+                    <div class="portfolio-sidebar portfolio-brief pt-3 pt-md-4">
                         <div class="project-details text-white">
                             <h2 class="commom-heading text-white"><?= 'Project Brief:'; ?></h2>
                             <?php if (have_rows('project_brief_list')):
