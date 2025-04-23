@@ -1,7 +1,7 @@
 /* ------------------ media query Sh ---------------- */
 @media (min-width: 1400px) {
     .portfolio-hero-section {
-        height: 80vh;
+        height: 90vh;
     }
 
     .client-testament-video-section {
@@ -661,8 +661,15 @@
     .snapshots-section .snapshots-slider .swiper-slide img {
         width: 100%;
         height: 250px;
-
     }
+    .portfolio-hero-section {
+     height: 80vh;
+   }
+    .portfolio-hero-section img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
 
 
 }
