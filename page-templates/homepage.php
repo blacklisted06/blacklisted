@@ -12,9 +12,9 @@ $video_poster = get_field('video_poster');
 <section class="hero-banner">
     <div class="container-fluid p-0">
         <div class="ratio ratio-16x9 position-relative">
-            <video class="" poster="<?php echo $video_poster['url']; ?>" autoplay muted loop playsinline
+            <video id="home_page_video" class="" data-video="<?= $video['url']; ?>" poster="<?php echo $video_poster['url']; ?>" muted loop playsinline
                 style="object-fit: cover;">
-                <source src="<?= $video['url']; ?>" type="video/mp4">
+                <source src="" type="video/mp4">
             </video>
             <div class="video-overlay d-flex align-items-end justify-content-center pb-5">
                 <div class="content-box z-1 text-white pb-1">
@@ -24,7 +24,7 @@ $video_poster = get_field('video_poster');
                         <br>
                         <?php echo $video_sub_title; ?>
                     </h1>
-                    <div class="d-flex justify-content-center mt-4 custom-btn">
+                    <div class="d-flex justify-content-center mt-4 custom-btn pt-4">
                         <a class="custom-btn-animation button-link btn rounded-0 text-white"
                             href="#looking-for-something">
                             <span class="button-content-wrapper">
@@ -138,7 +138,7 @@ $video_poster = get_field('video_poster');
                                 <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="image">
                                 <div class="portfolio_overlay_mb">
                                     <div class="portfolio_overlay">
-                                        <span class="portfolio-brand"><?= 'branding & identity'; ?></span>
+                                        <span class="portfolio-brand d-block"><?= get_sub_field('portfolio_category'); ?></span>
                                     </div>
                                     <div class="portfolio_overlay-name">
                                         <p class="common-description text-white portfolio-name m-0">
@@ -169,7 +169,7 @@ $video_poster = get_field('video_poster');
                     <div class="row align-items-center g-4">
                         <div class="col-md-8">
                             <div class="home-cta-section-heading">
-                                <span class="low_brand text-uppercase text-white">Join OUr TEAM</span>
+                                <span class="low_brand secondary-color text-uppercase pb-2 d-block">Join OUr TEAM</span>
                                 <h2 class="customised-heading text-white m-0"><?= get_field('ai_title'); ?></h2>
                             </div>
                         </div>
