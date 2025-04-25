@@ -103,9 +103,9 @@ get_header();
 
 <section class="career-video-banner common-section-spacing my-5">
     <div class="container">
-        <div class="section-header pb-5 text-center">
-                <span class="common-subheading secondary-color d-block pb-3">Hear from the Team </span>  
+            <div class="section-header pb-5 text-center">
                  <h2 class="commom-heading text-white">We lead with experience and execute with talent!</h2>
+                  <span class="common-subheading secondary-color d-block pb-3">Hear from the Team </span>  
             </div>
         <div class="custom-border overflow-hidden ratio ratio-16x9 position-relative">
             <video id="team_video" class="" poster="https://blacklisted.agency/wp-content/uploads/2025/03/video-cover-image.png" autoplay muted loop playsinline style="object-fit: cover;">
@@ -307,17 +307,18 @@ get_header();
     </div>
 </section>
 
-<section class=" common-section-spacing bg-theme-dark">
+<section class="customised-section-home common-section-spacing bg-theme-dark">
     <div class="container">
-        <div class="customised-section-inner blog-cta-banner text-white px-xl-5 px-md-4 custom-border">
+        <div class="customised-section-inner">
             <div class="container">
-                <div class="row align-items-center py-5">
+                <div class="blog-cta-banner blog-custom-btn">
+                <div class="row align-items-center g-4">
                     <div class="col-lg-9 col-md-6">
-                        <p class="common-description"><?= get_field('join_title'); ?></p>
+                        <span class="low_brand secondary-color text-uppercase pb-2 d-block"><?= get_field('join_title'); ?></span>
                         <h2 class="customised-heading text-white"><?= get_field('join_desc'); ?> </h2>
                     </div>
                     <div class="col-lg-3 col-md-6 d-flex justify-content-center justify-content-md-end">
-                        <div class="blog-custom-btn">
+                        <div class="blog-custom-btn quotation-form">
                             <a class="custom-btn-animation button-link btn rounded-0 text-white" href="<?= get_field('join_button_link'); ?>">
                                 <span class="button-content-wrapper">
                                     <span class="button-text"><?= get_field('join_button_text'); ?> <span class="btn-arrows"></span>
@@ -326,6 +327,7 @@ get_header();
                             </a>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

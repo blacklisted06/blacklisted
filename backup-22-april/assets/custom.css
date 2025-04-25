@@ -228,7 +228,6 @@ a {
     font-family: Arboria;
     font-size: 18px;
     font-weight: 400;
-    text-transform: capitalize;
 }
 
 .common-info-span {
@@ -748,20 +747,16 @@ header.menu-active-mn {
     font-family: Arboria;
 }
 
-span.heading-arrow::after,
-span.heading-arrow::before {
-    width: 22px;
-    height: 22px;
-    border-right: 8px solid var(--secondary-color);
-    border-top: 8px solid var(--secondary-color);
-    content: "";
+.hero-banner span.heading-arrow::before {
+    content: '';
     position: absolute;
+    top: -5px;
+    background: url(https://blacklisted.agency/wp-content/uploads/2025/04/brand-arrow.svg) no-repeat 0 0;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
 }
 
-span.heading-arrow::after {
-    right: -2.3rem;
-    top: -0.5rem;
-}
 
 span.off-white-text {
     color: var(--secondary-color);
@@ -789,13 +784,6 @@ span.off-white-text {
 .attention-section .circle.left {
     left: 5rem;
     bottom: 0;
-}
-
-.Major-Clients-img img {
-    height: 28px;
-    object-fit: contain !important;
-    margin: auto;
-    display: block;
 }
 
 .home .clients-overlay:after {
@@ -1334,14 +1322,14 @@ p.single-img:before {
 }
 
 .customised-section-home .customised-heading {
-    font-size: 60px;
+    font-size: 44px;
     font-style: normal;
+    font-weight: 700;
     line-height: normal;
-    margin: 0;
 }
 
 .customised-section-home .customised-section-inner {
-    padding: 90px 0;
+    padding: 50px 0;
 }
 
 .clients-chronicles-section .testimonial-card {
@@ -1465,7 +1453,7 @@ p.single-img:before {
     font-size: 96px;
     font-style: normal;
     font-weight: 400;
-    line-height: 70px;
+    line-height: 72.917%;
     text-transform: capitalize;
 }
 
@@ -1491,6 +1479,11 @@ span.experience-symbol {
     margin: 0;
     padding-right: 1rem;
 }
+
+.founder-section .founder-bg-animation .founder-info {
+    padding: 36px;
+}
+
 
 .founder-bg-animation {
     background-image: url(https://blacklisted.agency/wp-content/uploads/2024/07/FaviconBlacklisted.svg);
@@ -1981,10 +1974,6 @@ section.banner-sec-parallax {
     font-style: normal;
 }
 
-.all-clients .scroller__inner .Major-Clients-img {
-    max-width: 200px;
-    min-width: 200px;
-}
 
 .article__title {
     position: absolute;
@@ -2782,7 +2771,7 @@ section.portfolio-hero-section:before {
 }
 
 .seo-cta-section .customised-section-inner {
-    padding: 50px 60px;
+    padding: 80px 60px;
 }
 
 .meet-our-experts .custom-card-content .stats__number {
@@ -3074,7 +3063,7 @@ section.seo-stats-section {
 }
 
 select.ff-el-form-control:not([size]):not([multiple]) {
-    height: auto !important;
+    height: 55px !important;
 }
 
 .fluentform .ff-el-form-control::placeholder {
@@ -3237,6 +3226,38 @@ body.popup-open {
 .contact-form-radio .ff-el-input--label {
     margin-bottom: 1rem !Important;
 }
+
+.custom-select-wrapper .ff-t-container .ff-t-cell:nth-child(2) .ff-el-input--content, .custom-dropdown-wrapper .ff-el-input--content {
+    position: relative;
+}
+
+.custom-select-wrapper .ff-t-container .ff-t-cell:nth-child(2) .ff-el-input--content::after, .custom-dropdown-wrapper .ff-el-input--content::after {
+    content: "";
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    width: 11px;
+    height: 5px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='5' viewBox='0 0 11 5' fill='none'%3E%3Cpath d='M5.5 5L10.2631 0.5H0.73686L5.5 5Z' fill='%23DDDDDD'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.inquiry-wrapper .ff-el-form-check span {
+    margin-top: -6px;
+}
+
+.fluentform .ff-el-tc label.ff_tc_label>span {
+    padding-right: 8px;
+}
+
+.ff-el-input--content select {
+-webkit-appearance: none;
+    appearance: none;
+}
+
 
 /* ============ contact page new eh =========== */
 /* ============ new service page Sh =========== */
