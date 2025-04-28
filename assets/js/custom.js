@@ -337,3 +337,36 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   
   
+  //Scroll back to top
+  
+    const backToTopButton = document.getElementById('backToTop');
+    const progressCircle = document.getElementById('progressCircle');
+    const circumference = 2 * Math.PI * 45;
+  
+    function updateProgress() {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const progress = scrollTop / scrollHeight;
+      const offset = circumference - (progress * circumference);
+      progressCircle.style.strokeDashoffset = offset;
+    }
+  
+    window.addEventListener('scroll', () => {
+      updateProgress();
+      if (document.documentElement.scrollTop > 100) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+  
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  
+    // Initialize
+    updateProgress();
+    backToTopButton.style.display = 'none';
+  
+  
+  

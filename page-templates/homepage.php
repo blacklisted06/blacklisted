@@ -128,14 +128,15 @@ $video_poster = get_field('video_poster');
             <?php if (have_rows('select_portfolio')):
                 while (have_rows('select_portfolio')):
                     the_row();
-                    $image = get_sub_field('image');
+                   // $image = get_sub_field('image');
                     $classname = get_sub_field('class_name');
                     $portfolio = get_sub_field('portfolio');
+                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $portfolio->ID ), 'full' );
                     ?>
                     <div class="col-lg-4 col-6 portfolio_design_cont">
                         <a href="<?php echo site_url() . '/portfolio/' . esc_html($portfolio->post_name); ?>">
                             <div class="portfolio_container">
-                                <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" class="image">
+                                <img src="<?php echo $image[0]; ?>" alt="<?php echo esc_html($portfolio->post_title); ?>" class="image">
                                 <div class="portfolio_overlay_mb">
                                     <div class="portfolio_overlay">
                                         <span class="portfolio-brand d-block"><?= get_sub_field('portfolio_category'); ?></span>
@@ -161,31 +162,32 @@ $video_poster = get_field('video_poster');
 </section>
 
 <!-- AI and man-made customised section SH  -->
-<section class="customised-section-home common-section-spacing bg-theme-dark">
-    <div class="container-fluid p-0">
-        <div class="customised-section-inner">
+<section class="seo-cta-section customised-section-home common-section-spacing bg-theme-dark">
+    <div class="container">
+        <div class="customised-section-inner custom-border">
             <div class="container">
                 <div class="blog-cta-banner blog-custom-btn">
                     <div class="row align-items-center g-4">
                         <div class="col-md-8">
                             <div class="home-cta-section-heading">
-                                <span class="low_brand secondary-color text-uppercase pb-2 d-block">Join OUr TEAM</span>
+                                <span class="low_brand secondary-color text-uppercase pb-2 d-block"><?= get_field('ai_cta_sub_title'); ?></span>
                                 <h2 class="customised-heading text-white m-0"><?= get_field('ai_title'); ?></h2>
                             </div>
                         </div>
                         <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
+                            <div class="founder-info">
                             <a class="custom-btn-animation button-link btn rounded-0 text-white"
                                 href="<?= get_field('ai_button_link'); ?>">
                                 <span class="button-content-wrapper"><span
                                         class="button-text"><?= get_field('ai_button_text'); ?><span
                                             class="btn-arrows"></span></span></span>
                             </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
     </div>
     </div>
@@ -222,7 +224,7 @@ $video_poster = get_field('video_poster');
     <div class="founder-bg-animation position-relative">
         <div class="bg-overlay"> </div>
         <div class="container">
-            <div class="custom-bg ps-0">
+            <div class="custom-bg ps-0 custom-border">
                 <div class="row align-items-center g-0">
                     <div class="col-xl-5 col-12">
                         <div class="founder-image">
@@ -231,8 +233,8 @@ $video_poster = get_field('video_poster');
                         </div>
                     </div>
                     <div class="col-xl-7 col-12">
-                        <div class="founder-info p-4 pe-md-5">
-                            <h2 class="commom-heading m-0"><?php echo get_field('founder_name'); ?></h2>
+                        <div class="founder-info">
+                            <h2 class="commom-heading mb-2"><?php echo get_field('founder_name'); ?></h2>
                             <span
                                 class="common-subheading text-primary d-block mb-2"><?php echo get_field('founder_role'); ?></span>
                             <p class="commom-description mb-4">
@@ -255,7 +257,7 @@ $video_poster = get_field('video_poster');
                                 </div>
                             </div>
                                 
-                             <div class="d-flex justify-content-start mt-3 custom-btn ">
+                             <div class="d-flex justify-content-center justify-content-md-start mt-3 custom-btn ">
                                 <a class="custom-btn-animation button-link btn rounded-0"
                                     href="<?= site_url('founder'); ?>">
                                     <span class="button-content-wrapper">
@@ -334,8 +336,8 @@ $video_poster = get_field('video_poster');
                                     ?>
                                 </div>
                                 <a href="<?php the_permalink(); ?>">
-                                <h4 class="blog_name"><?php the_title(); ?></h4>
-                                <p class="blog-content"><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
+                               <h4 class="blog_name asd"><?php echo wp_trim_words(get_the_title(), 10, '...'); ?></h4>
+                                <!--<p class="blog-content"><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>-->
                             </a>
                         </div>
                     </div>

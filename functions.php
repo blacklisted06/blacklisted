@@ -1,5 +1,6 @@
 <?php 
 add_theme_support('post-thumbnails');
+add_filter( 'use_block_editor_for_post', '__return_false' );
 
 function allow_svg_uploads($mimes) {
     // Add SVG to the list of allowed file types
@@ -39,6 +40,7 @@ function theme_name_enqueue_styles() {
 	$version = date('YmdHis');
 	$template_directory_uri = get_stylesheet_directory_uri();
     $base_style_version = filemtime(get_stylesheet_directory() . '/assets/css/custom-style.css');
+    $responsive = filemtime(get_stylesheet_directory() . '/assets/css/responsive.css');
     wp_register_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap/bootstrap.min.css', array(), '1.0', 'all' );
     wp_enqueue_style( 'bootstrap' );
     wp_register_style( 'font-awesome','//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css', array(), '1.0', 'all' );
@@ -49,6 +51,7 @@ function theme_name_enqueue_styles() {
 	wp_enqueue_style( 'slick-css', '//cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css', array(), null );
 	wp_enqueue_style( 'slick-theme-css', '//cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css', array(), null );
     wp_enqueue_style('custom-style', $template_directory_uri . '/assets/css/custom-style.css', array(), $base_style_version);
+    wp_enqueue_style('responsive', $template_directory_uri . '/assets/css/responsive.css', array(), $responsive);
 
 	wp_enqueue_script('jquery');
     wp_localize_script('jquery', 'ajaxurl', admin_url('admin-ajax.php'));
@@ -65,6 +68,7 @@ function theme_name_enqueue_styles() {
 	wp_enqueue_script('slick','https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js', array(),null, true );
     // Enqueue custom script
     wp_enqueue_script('custom-js', get_template_directory_uri() . '/assets/js/custom.js', array(), $version,true);
+    
     
 	
 }
@@ -385,7 +389,7 @@ function clients_listing_custom_shortcode() { ?>
                     $client = $clientData['client'];
                     ?>
                     <div class="col">
-                        <div class="Major-Clients-img custom-dark-bg border custom-border-primary p-2 p-md-3 p-lg-4">
+                        <div class="clients-logo-image custom-dark-bg border custom-border-primary py-3 text-center h-100 d-flex align-items-center justify-content-center">
                             <img src="<?php echo esc_url($client['url']); ?>" alt="<?php echo esc_attr($client['alt']); ?>">
                         </div>
                     </div>
@@ -398,7 +402,7 @@ function clients_listing_custom_shortcode() { ?>
             </div>
         </div>
         <?php  if ( is_front_page() ) :?>
-        <div class="d-flex justify-content-center mt-4 custom-btn">
+        <div class="d-flex justify-content-center pt-2 pt-md-4">
             <a class="custom-btn-animation button-link btn rounded-0 text-white"
                 href="<?php echo site_url('clients'); ?>">
                 <span class="button-content-wrapper">

@@ -4,155 +4,6 @@ get_header();
 $header_image = get_field('header_image');
 ?>
 
-<style>
-    .quote-container {
-        background-color: #f4eedb;
-        padding: 2rem;
-        position: relative;
-        text-align: center;
-    }
-
-    .quote-badge {
-        background-color: #000;
-        color: #fff;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 30px;
-        position: absolute;
-        top: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .quote-text {
-        color: var(--blacklisted-black);
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 32px;
-    }
-
-    .quote-text strong {
-        font-weight: 700;
-    }
-
-    .snapshots-section .swiper-wrapper {
-        padding-left: 10rem;
-    }
-
-    .sticky-box {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        z-index: 10;
-        padding: 50px 36px;
-        max-width: 430px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-        transform: translate(0%, -50%);
-    }
-
-    .snapshots-slider .swiper-slide img {
-        width: 100%;
-        height: 370px;
-        object-fit: cover;
-        border-radius: 8px;
-        object-position: top;
-    }
-
-    .snapshots-slider .swiper-button-next::after,
-    .snapshots-slider .swiper-button-prev::after {
-        display: none;
-    }
-
-    .snapshots-slider .swiper-button-next,
-    .snapshots-slider .swiper-button-prev {
-        bottom: 12px;
-        top: auto;
-        width: 40px;
-        height: 40px;
-        background: #fff;
-        border-radius: 50%;
-    }
-
-    .snapshots-slider .swiper-button-prev {
-        right: 65px;
-        left: auto;
-    }
-
-    .snapshots-slider .swiper-button-next svg,
-    .snapshots-slider .swiper-button-prev svg {
-        height: auto;
-        width: auto;
-    }
-
-    .vision-mission-description.text-white {
-        font-size: 44px;
-        line-height: normal;
-    }
-
-    .vision-mission-description span {
-        font-size: 60px;
-    }
-
-    .parallax-section {
-        position: relative;
-        overflow: hidden;
-    }
-
-
-.our-team-section .right-images, .our-team-section .left-images {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    position: absolute;
-}
-
-.our-team-section .right-images{
-      left: 0;
-    bottom: auto;
-}
-
-.our-team-section .left-images {
-    right: 0;
-}
-
-
-    .center-text {
-        flex: 1;
-        text-align: center;
-        z-index: 2;
-    }
-
-    h1[data-sticky-text] {
-        font-size: 3rem;
-        color: #333;
-    }
-    .our-team-section .parallax-wrapper {
-    display: flex;
-    flex-direction: column;
-}
-.center-text {
-    flex: 1;
-    text-align: center;
-    z-index: 2;
-    position: sticky;
-    top: 10rem;
-}
-
-    @media (max-width: 768px) {
-        .sticky-box {
-            position: static;
-            max-width: 100%;
-            margin-bottom: 20px;
-        }
-    }
-</style>
-
 <div class="bg-theme-noise" aria-hidden="true"></div>
 <div class="company-wrapper">
     <!-- Hero SH -->
@@ -160,11 +11,12 @@ $header_image = get_field('header_image');
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-lg-12 col-md-10">
+                     <div class="hero-section-header text-center">
                     <span class="hero-common-subheading secondary-color d-block fst-normal mb-3 position-relative">
                         Company
                     </span>
                     <h1 class="seo-common-heading text-white mb-3">Beyond the Brand: Our Story</h1>
-                    <p class="common-description text-white m-0">
+                    <p class="common-description text-white m-auto">
                         Every journey starts with a vision. What began as an idea has grown into a brand that pushes
                         boundaries and creates impact. Our story is one of passion, innovation, and drive.</p>
                     <div class="d-flex justify-content-center mt-0 mt-md-5 custom-btn pt-5">
@@ -175,12 +27,13 @@ $header_image = get_field('header_image');
                             </span>
                         </a>
                     </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!------- video section SH ------------->
-    <section class="numbers-section full-video-section common-section-spacing bg-theme-dark">
+    <section class="numbers-section full-video-section common-section-spacing bg-theme-dark pb-0">
         <div class="container">
             <div class="position-relative ourspace-video">
                 <img src="https://blacklisted.agency/wp-content/uploads/2025/04/company-video-banner.webp" alt=""
@@ -477,29 +330,28 @@ $header_image = get_field('header_image');
     </section>
     <!----  company-quote-section EH ------>
     <!---- Built section Sh ------------>
-    <section class="company-built-section tour-section-dektop-padding bg-theme-dark">
-        <div class="container">
-            <div class="row gx-5 align-items-center">
-                <div class="col-lg-6">
-                    <div>
-                        <h2 class="commom-heading text-white">Built from the ground up, now reaching global clients</h2>
-                        <p class="commom-description secondary-color">Lorem ipsum dolor sit amet consectetur. Tortor
-                            odio null. </p>
-                        <p class="work-year common-description text-white">We are a team of wizards, working magic to
-                            transform your online presence. Our secret sauce lies in daring designs, strategic
-                            solutions, and out-of-the-box thinking. Let us breathe life into your brand, leaving a trail
-                            of awe-inspiring creations that defy expectations. Join the revolution!</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="globe-image d-flex justify-content-end">
-                        <img src="https://blacklisted.agency/wp-content/uploads/2025/04/globe-image.webp" alt="image"
-                            class="full-image img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--<section class="company-built-section tour-section-dektop-padding bg-theme-dark">-->
+    <!--    <div class="container">-->
+    <!--        <div class="row gx-5 align-items-center">-->
+    <!--            <div class="col-lg-6 mb-4 mb-lg-0">-->
+    <!--                <div>-->
+    <!--                    <h2 class="commom-heading text-white">Built from the ground up, now reaching global clients</h2>-->
+    <!--                    <p class="commom-description secondary-color">Lorem ipsum dolor sit amet consectetur. Tortor-->
+    <!--                        odio null. </p>-->
+    <!--                    <p class="work-year common-description text-white">We are a team of wizards, working magic to-->
+    <!--                        transform your online presence. Our secret sauce lies in daring designs, strategic-->
+    <!--                        solutions, and out-of-the-box thinking. Let us breathe life into your brand, leaving a trail-->
+    <!--                        of awe-inspiring creations that defy expectations. Join the revolution!</p>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="col-lg-6">-->
+    <!--                <div class="globe-image d-flex justify-content-center justify-content-lg-end">-->
+    <!--                    <div id="globe-canvas"></div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</section>-->
     <!---- Built section Eh ------------>
     <!------- founders trust section SH  ------>
     <section class="numbers-section tour-section-dektop-padding pt-0 bg-theme-dark">
@@ -541,14 +393,14 @@ $header_image = get_field('header_image');
     </section>
     <!------- founders trust section EH  ------>
     <!----------- snapshots section SH ----------->
-    <section class="snapshots-section common-section-spacing bg-theme-dark">
+    <section class="snapshots-section tour-section-dektop-padding pt-0 bg-theme-dark">
         <div class="container position-relative">
             <div class="sticky-box bg-light-yellow ">
                 <h4 class="commom-heading text-primary fw-normal">snapshots from<br>our office activity</h4>
                 <p class="commom-description text-dark small mb-3">Lorem ipsum dolor sit amet consectetur. Erat nisi hac
                     egestas in eget
                     aliquam.</p>
-                <div class="founder-info d-flex justify-content-start mt-0 mt-md-5 custom-btn pt-5">
+                <div class="founder-info d-flex justify-content-start mt-0 mt-md-5 custom-btn pt-3 pt-md-5">
                     <a class="custom-btn-animation button-link btn rounded-0"
                         href="https://blacklisted.agency/careers/#current-openings">
                         <span class="button-content-wrapper">
@@ -619,7 +471,7 @@ $header_image = get_field('header_image');
     </section>
     <!----------- snapshots section EH ----------->
     <!-- our-value-section SH  -->
-    <section class="our-value-section services-section common-section-spacing bg-theme-dark">
+    <section class="our-value-section services-section bg-theme-dark">
         <div class="container">
             <div class="section-header pb-5">
                 <h2 class="commom-heading text-white">values that make us who we are</h2>
@@ -716,9 +568,9 @@ $header_image = get_field('header_image');
     <!---- Built section Sh ------------>
     <section class="company-value-section tour-section-dektop-padding bg-theme-dark">
         <div class="container">
-            <div class="row gx-5 align-items-center">
+            <div class="row g-5 align-items-center">
                 <div class="col-lg-6">
-                    <div>
+                    <div class="company-value-section-content">
                         <h2 class="commom-heading text-white">values that make us who we are</h2>
                         <p class="commom-description secondary-color">Lorem ipsum dolor sit amet consectetur. Tortor
                             odio null. </p>
@@ -727,7 +579,7 @@ $header_image = get_field('header_image');
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
-                    <div class="globe-image d-flex justify-content-end">
+                    <div class="globe-image d-flex justify-content-end justify-content-md-center">
                         <img src="https://blacklisted.agency/wp-content/uploads/2025/04/company-value-section-img.webp"
                             alt="value-image" class="full-image">
                     </div>
@@ -737,10 +589,10 @@ $header_image = get_field('header_image');
     </section>
     <!---- Built section Eh ------------>
     <!---- vision & mission  section Sh ------------>
-    <section class="vision-mission-section tour-section-dektop-padding bg-theme-dark">
+    <section class="vision-mission-section tour-section-dektop-padding pt-0 bg-theme-dark">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="section-header pb-5 text-center col-md-10 col-lg-10">
+                <div class="section-header text-center col-md-10 col-lg-10">
                     <h2 class="commom-heading text-white">
                         vision & mission statement</h2>
                     <span class="common-subheading secondary-color d-block pb-3">
@@ -757,7 +609,7 @@ $header_image = get_field('header_image');
     </section>
     <!---- vision & mission section Eh ------------>
     <!---- founder section Sh ------------>
-    <section class="founder-journey-section common-section-spacing bg-theme-dark">
+    <section class="founder-journey-section bg-theme-dark">
         <div class="container">
             <div class="founder-journey-video custom-border position-relative mb-5">
                 <img src="https://blacklisted.agency/wp-content/uploads/2025/02/founder-video-prev-img-1.webp" alt=""
@@ -810,7 +662,7 @@ $header_image = get_field('header_image');
             </div>
         </div>
         <div class="wrapper">
-            <div class="marquee pb-5">
+            <div class="marquee pb-3 pb-md-5">
                 <div class="marquee__group">
                     <div class="industries-text"><span>Insurance Agency</span></div>
                     <div class="industries-text"><span>Wellness</span></div>
@@ -842,7 +694,7 @@ $header_image = get_field('header_image');
                 </div>
             </div>
 
-            <div class="marquee marquee--reverse pb-5">
+            <div class="marquee marquee--reverse pb-3 pb-md-5">
                 <div class="marquee__group">
                     <div class="industries-text"><span>Finance</span></div>
                     <div class="industries-text"><span>Loan Providers</span></div>
@@ -871,72 +723,6 @@ $header_image = get_field('header_image');
                     <div class="industries-text"><span>Clinics</span></div>
                     <div class="industries-text"><span>Forex Exchange</span></div>
                     <div class="industries-text"><span>Tech Products</span></div>
-                </div>
-            </div>
-
-            <div class="marquee pb-5">
-                <div class="marquee__group">
-                    <div class="industries-text"><span>Light Manufacturers</span></div>
-                    <div class="industries-text"><span>Kitchen Manufacturers</span></div>
-                    <div class="industries-text"><span>Dentists</span></div>
-                    <div class="industries-text"><span>Honey Manufacturers</span></div>
-                    <div class="industries-text"><span>Furniture</span></div>
-                    <div class="industries-text"><span>Lift Manufacturers</span></div>
-                    <div class="industries-text"><span>Ortho Products</span></div>
-                    <div class="industries-text"><span>Merchandise</span></div>
-                    <div class="industries-text"><span>Ayurveda Products</span></div>
-                    <div class="industries-text"><span>Fitness Products</span></div>
-                    <div class="industries-text"><span>Food Products</span></div>
-                    <div class="industries-text"><span>Music Videos</span></div>
-                </div>
-
-                <div aria-hidden="true" class="marquee__group">
-                    <div class="industries-text"><span>Light Manufacturers</span></div>
-                    <div class="industries-text"><span>Kitchen Manufacturers</span></div>
-                    <div class="industries-text"><span>Dentists</span></div>
-                    <div class="industries-text"><span>Honey Manufacturers</span></div>
-                    <div class="industries-text"><span>Furniture</span></div>
-                    <div class="industries-text"><span>Lift Manufacturers</span></div>
-                    <div class="industries-text"><span>Ortho Products</span></div>
-                    <div class="industries-text"><span>Merchandise</span></div>
-                    <div class="industries-text"><span>Ayurveda Products</span></div>
-                    <div class="industries-text"><span>Fitness Products</span></div>
-                    <div class="industries-text"><span>Food Products</span></div>
-                    <div class="industries-text"><span>Music Videos</span></div>
-                </div>
-            </div>
-
-            <div class="marquee marquee--reverse">
-                <div class="marquee__group">
-                    <div class="industries-text"><span>Builders</span></div>
-                    <div class="industries-text"><span>Doctors</span></div>
-                    <div class="industries-text"><span>Immigration</span></div>
-                    <div class="industries-text"><span>Creative Tools</span></div>
-                    <div class="industries-text"><span>Perfumes</span></div>
-                    <div class="industries-text"><span>Wood Artifacts</span></div>
-                    <div class="industries-text"><span>Foam Manufacturers</span></div>
-                    <div class="industries-text"><span>Sanitary Ware</span></div>
-                    <div class="industries-text"><span>Building Materials</span></div>
-                    <div class="industries-text"><span>Record Labels</span></div>
-                    <div class="industries-text"><span>Crypto</span></div>
-                    <div class="industries-text"><span>Bath Fittings</span></div>
-                    <div class="industries-text"><span>Tiles Manufacturer</span></div>
-                </div>
-
-                <div aria-hidden="true" class="marquee__group">
-                    <div class="industries-text"><span>Builders</span></div>
-                    <div class="industries-text"><span>Doctors</span></div>
-                    <div class="industries-text"><span>Immigration</span></div>
-                    <div class="industries-text"><span>Creative Tools</span></div>
-                    <div class="industries-text"><span>Perfumes</span></div>
-                    <div class="industries-text"><span>Wood Artifacts</span></div>
-                    <div class="industries-text"><span>Foam Manufacturers</span></div>
-                    <div class="industries-text"><span>Sanitary Ware</span></div>
-                    <div class="industries-text"><span>Building Materials</span></div>
-                    <div class="industries-text"><span>Record Labels</span></div>
-                    <div class="industries-text"><span>Crypto</span></div>
-                    <div class="industries-text"><span>Bath Fittings</span></div>
-                    <div class="industries-text"><span>Tiles Manufacturer</span></div>
                 </div>
             </div>
 
@@ -944,7 +730,7 @@ $header_image = get_field('header_image');
     </section>
     <!------------- scrolling text EH ------------>
     <!------- CTA section SH 1 ------>
-    <section class="common-section-spacing bg-theme-dark">
+    <section class="cta-section tour-section-dektop-padding pt-0 bg-theme-dark">
         <div class="container">
             <div class="customised-section-inner blog-cta-banner text-white px-xl-5 px-md-4 custom-border">
                 <div class="container">
@@ -969,94 +755,50 @@ $header_image = get_field('header_image');
             </div>
         </div>
     </section>
-    <!---------  join our team section SH ------------>
-    <!--<section class="our-team-section-spacing bg-theme-dark">-->
-    <!--    <div class="container">-->
-    <!--        <div class="row align-items-center">-->
-    <!-- Left Column Images -->
-    <!--            <div class="col-md-4 d-flex flex-column gap-3">-->
-    <!--                <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image1.webp" class="img-fluid rounded" alt="Team Image 1">-->
-    <!--                <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image2.webp" class="img-fluid rounded" alt="Team Image 2">-->
-    <!--                <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image3.webp" class="img-fluid rounded" alt="Team Image 3">-->
-    <!--            </div>-->
 
-    <!-- Center Text -->
-    <!--            <div class="col-md-4 text-center">-->
-    <!--                <h2 class="commom-heading text-white">think you’d be a good fit? come join our team</h2>-->
-    <!--                <p class="commom-description text-white">-->
-    <!--                    We craft data-driven digital marketing strategies that elevate your brand,-->
-    <!--                    drive engagement, and maximize success in the digital world.-->
-    <!--                </p>-->
-    <!--                <div class="d-flex justify-content-center mt-0 mt-md-5 custom-btn pt-5">-->
-    <!--                    <a class="custom-btn-animation button-link btn rounded-0 text-white" href="#services">-->
-    <!--                        <span class="button-content-wrapper">-->
-    <!--                            <span class="button-text">join us now<span class="btn-arrows"></span>-->
-    <!--                            </span>-->
-    <!--                        </span>-->
-    <!--                    </a>-->
-    <!--                </div>-->
-    <!--            </div>-->
-
-    <!-- Right Column Images -->
-    <!--            <div class="col-md-4 d-flex flex-column gap-3">-->
-    <!--                <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image4.webp" class="img-fluid rounded" alt="Team Image 4">-->
-    <!--                <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image5.webp" class="img-fluid rounded" alt="Team Image 5">-->
-    <!--                <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image6.webp" class="img-fluid rounded" alt="Team Image 6">-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--</section>-->
-
-    <!---->
-
-    <section class="our-team-section tour-section-dektop-padding bg-theme-dark parallax-section">
+    <section class="our-team-section tour-section-dektop-padding pt-0 bg-theme-dark parallax-section">
         <div class="container">
-
-
             <div class="parallax-wrapper">
-                   <div class="row">
-                        <div class="col-md-6 m-auto ">
-                 <div class="center-text">
-                    <h2 class="commom-heading text-white">think you’d be a good fit? come join our team</h2>
-                    <p class="commom-description text-white">
-                        We craft data-driven digital marketing strategies that elevate your brand,
-                        drive engagement, and maximize success in the digital world.
-                    </p>
-                    <div class="d-flex justify-content-center mt-0 mt-md-5 custom-btn pt-5">
-                        <a class="custom-btn-animation button-link btn rounded-0 text-white" href="#services">
-                            <span class="button-content-wrapper">
-                                <span class="button-text">join us now<span class="btn-arrows"></span>
-                                </span>
-                            </span>
-                        </a>
+                <div class="row">
+                    <div class="col-md-6 m-auto ">
+                        <div class="center-text">
+                            <h2 class="commom-heading text-white">think you’d be a good fit? come join our team</h2>
+                            <p class="commom-description text-white">
+                                We craft data-driven digital marketing strategies that elevate your brand,
+                                drive engagement, and maximize success in the digital world.
+                            </p>
+                            <div class="d-flex justify-content-center mt-0 mt-md-5 custom-btn pt-5">
+                                <a class="custom-btn-animation button-link btn rounded-0 text-white" href="#services">
+                                    <span class="button-content-wrapper">
+                                        <span class="button-text">join us now<span class="btn-arrows"></span>
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                </div>
-                   </div>
- 
-              <div class="row">
-                                 <div class="col-md-6 left-images align-items-center">
-                    <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image1.webp"
-                        class="parallax-image left" data-speed="4.5" />
-                    <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image2.webp"
-                        class="parallax-image right" data-speed="2.3" />
-                    <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image3.webp"
-                        class="parallax-image right" data-speed="5.5" />
-                </div>
 
+                <div class="row">
+                    <div class="col-md-6 left-images align-items-center">
+                        <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image1.webp"
+                            class="parallax-image left" data-speed="4.5" />
+                        <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image2.webp"
+                            class="parallax-image right" data-speed="2.3" />
+                        <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image3.webp"
+                            class="parallax-image right" data-speed="5.5" />
+                    </div>
 
-                <!-- Multiple right images -->
-                <div class=" col-md-6 right-images align-items-center">
-                    <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image4.webp"
-                        class="parallax-image left" data-speed="4.5" />
-                    <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image5.webp"
-                        class="parallax-image right" data-speed="2.3" />
-                    <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image6.webp"
-                        class="parallax-image right" data-speed="5.5" />
+                    <!-- Multiple right images -->
+                    <div class=" col-md-6 right-images align-items-center">
+                        <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image4.webp"
+                            class="parallax-image left" data-speed="4.5" />
+                        <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image5.webp"
+                            class="parallax-image right" data-speed="2.3" />
+                        <img src="https://blacklisted.agency/wp-content/uploads/2025/04/team-image6.webp"
+                            class="parallax-image right" data-speed="5.5" />
+                    </div>
                 </div>
-              </div>
- 
-
             </div>
         </div>
     </section>
@@ -1141,6 +883,65 @@ $header_image = get_field('header_image');
         });
     </script>
 
+    <script src="https://unpkg.com/three@0.136.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.136.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://unpkg.com/three-globe"></script>
 
+    <script>
+        const container = document.getElementById('globe-canvas');
+        const { clientWidth, clientHeight } = container;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, clientWidth / clientHeight, 0.1, 1000);
+        camera.position.z = 300;
+
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); // transparent background
+        renderer.setSize(clientWidth, clientHeight);
+        renderer.setClearColor(0x000000, 0); // Make background transparent
+        container.appendChild(renderer.domElement);
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.enableZoom = false;
+
+        const light = new THREE.AmbientLight(0xffffff, 1);
+        scene.add(light);
+
+        const Globe = new ThreeGlobe()
+            .globeImageUrl('https://cdn.prod.website-files.com/646cf54d2d3bed3375ae978f/663b21ec8fdb02804ed78b36_globe-img.webp')
+           .labelLat(d => d.lat)
+    .labelLng(d => d.lng)
+    .labelText(d => d.name)
+    .labelSize(() => 2.5)
+    .labelDotRadius(() => 0.4)
+    .labelColor(() => '#fff');
+
+        scene.add(Globe);
+        Globe.labelsData([
+            { lat: 28.6139, lng: 77.2090, name: 'Delhi' },
+            { lat: 31.1471, lng: 75.3412, name: 'Punjab' },
+            { lat: 37.0902, lng: -95.7129, name: 'USA' },
+            { lat: -33.8688, lng: 151.2093, name: 'Sydney' }
+        ]);
+
+        Globe.scale.set(100, 100, 100);
+
+        function animate() {
+            requestAnimationFrame(animate);
+            Globe.rotation.y += 0.005;
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        Globe.scale.set(100, 100, 100);
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            const { clientWidth, clientHeight } = container;
+            camera.aspect = clientWidth / clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(clientWidth, clientHeight);
+        });
+    </script>
 </div>
 <?php get_footer(); ?>
