@@ -307,17 +307,16 @@ get_header();
     </div>
 </section>
 
-<section class="customised-section-home common-section-spacing bg-theme-dark">
-    <div class="container">
-        <div class="customised-section-inner">
-            <div class="container">
-                <div class="blog-cta-banner blog-custom-btn">
+<!---->
+<section class="seo-cta-section customised-section-home common-section-spacing bg-theme-dark">
+        <div class="container">
+            <div class="customised-section-inner blog-cta-banner text-white custom-border">
                 <div class="row align-items-center g-4">
-                    <div class="col-lg-9 col-md-6">
+                    <div class="col-lg-8 col-12">
                         <span class="low_brand secondary-color text-uppercase pb-2 d-block"><?= get_field('join_title'); ?></span>
-                        <h2 class="customised-heading text-white"><?= get_field('join_desc'); ?> </h2>
+                        <h2 class="customised-heading text-white m-0"><?= get_field('join_desc'); ?></h2>
                     </div>
-                    <div class="col-lg-3 col-md-6 d-flex justify-content-center justify-content-md-end">
+                    <div class="col-lg-4 col-12 d-flex justify-content-center justify-content-lg-end">
                         <div class="blog-custom-btn quotation-form">
                             <a class="custom-btn-animation button-link btn rounded-0 text-white" href="<?= get_field('join_button_link'); ?>">
                                 <span class="button-content-wrapper">
@@ -328,11 +327,10 @@ get_header();
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
         </div>
-    </div>
 </section>
+
 
 <section class="services-section career-services common-section-spacing bg-theme-dark">
     <div class="container">
@@ -344,9 +342,9 @@ get_header();
                <?= get_field('team_desc'); ?>
             </span> 
         </div>
-        <div class="row">
+        <div class="row g-4">
             <?php if (have_rows('team_list')): while (have_rows('team_list')): the_row(); $image= get_sub_field('icon');?>
-            <div class="mb-4 col-lg-4 col-6 service-contt">
+            <div class="col-mb-4 col-lg-4 col-6 service-contt">
                 <div class="services_card_inner h-100">
                     <a href="#" aria-label="Read more about " class="servicecard_readmore">
     					<div class="services_card h-100 d-flex">
@@ -362,7 +360,7 @@ get_header();
                 </div>
             </div><?php endwhile; endif; ?>
             
-            <div class="mb-4 col-lg-4 col-md-4 col-12 service-contt">
+            <div class="col-lg-4 col-md-4 col-12 service-contt">
 			   <div class="services_card_inner-social h-100">							
 				   <div class="services_card h-100 w-100 text-center text-white m-0 p-5 d-flex flex-column justify-content-center gap-3">
                         <h3 class="commom-description m-0"> <?= get_field('learn_more_about_title'); ?></h3>	
@@ -405,30 +403,32 @@ get_header();
         </div>
     </div>
 </section>
-
-
-<section class="common-section-spacing bg-theme-dark">
-            <div class="customised-section-inner blog-cta-banner career-cta-banner text-white">
-            <div class="container py-2 py-md-5">
-                <div class="row align-items-center">
-                    <div class="col-lg-9 col-md-6">
-                        <h2 class="customised-heading my-4 text-white"><?= get_field('financial_services_title'); ?></h2>
-                    </div>
-                    <div class="col-lg-3 col-md-6 d-flex justify-content-center justify-content-md-end">
-                        <div class="blog-custom-btn">
-                            <a class="custom-btn-animation button-link btn rounded-0 text-white" href="/contact/">
-                                <span class="button-content-wrapper">
-                                    <span class="button-text"><?= get_field('join_button_text'); ?> <span class="btn-arrows"></span>
-                                    </span>
-                                </span>
+<!---->
+<section class="customised-section-home common-section-spacing bg-theme-dark">
+    <div class="container-fluid p-0">
+        <div class="customised-section-inner">
+            <div class="container">
+                <div class="blog-cta-banner blog-custom-btn">
+                    <div class="row align-items-center g-4">
+                        <div class="col-md-8">
+                            <div class="home-cta-section-heading">
+                                <span class="low_brand secondary-color text-uppercase pb-2 d-block">Join OUr TEAM</span>
+                                <h2 class="customised-heading text-white m-0"><?= get_field('financial_services_title'); ?></h2>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex justify-content-center justify-content-md-end">
+                            <div class="founder-info">
+                            <a class="custom-btn-animation button-link btn rounded-0 text-white" href="/contact">
+                                <span class="button-content-wrapper"><span class="button-text"><?= get_field('join_button_text'); ?><span class="btn-arrows"></span></span></span>
                             </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </section>
-
     
 <section class="gallery-slider-section common-section-spacing bg-theme-dark">
 	 <?php echo do_shortcode('[gallery_list]'); ?>
